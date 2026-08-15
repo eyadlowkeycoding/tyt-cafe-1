@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #fbf6ed;
+  color: #20102f;
+}
+
+::selection {
+  background-color: #e9b94f;
+  color: #26103c;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid #e9b94f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Dotted price separator used across the menu */
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.price-row .fill {
+  flex: 1;
+  border-bottom: 1.5px dotted rgba(32, 16, 47, 0.28);
+  transform: translateY(-4px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
